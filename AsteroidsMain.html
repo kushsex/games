@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>AsteroidsMain.html</title>
+	
+	<script type = "text/javascript"
+            src = "simpleGame.js">
+    </script>
+
+	<script type = "text/javascript"
+            src = "Ship&Asteroids.js">
+    </script>
+
+	<script type = "text/javascript">
+		var scene;
+		var Ship;
+
+	
+
+	function init() { 
+		Asteroids = document.getElementById("Asteroids");
+		scene = new Scene();
+		Ship = new Ship();
+		Asteroid = new Asteroid();
+		scene.setBG("black");
+		scene.start();
+		space = new Sprite (scene, "Space.jpg", 1200, 800);
+		space.setSpeed (0);
+		
+        } // end init
+		
+		 function update(){
+            scene.clear();
+			space.update();
+			Asteroid.update();
+			Asteroid.run();
+			Ship.update();
+			Ship.checkKeys();
+	
+        } // end update
+		
+
+		
+		
+	</script>
+</head>
+
+<body onload = "init()">
+	<div id = "Asteroids">Simple Asteroids!</div>
+
+
+  
+
+</body>
+
+
+</html>
